@@ -13,8 +13,6 @@ Before running the server, open MySQL and run the SQL file that exists in the pr
 SOURCE tripper_schema_data.sql;
 ```
 
-If the file has a different name, use that file name instead.
-
 This file creates the required tables and inserts the initial data:
 
 * `users`
