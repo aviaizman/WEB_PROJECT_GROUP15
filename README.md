@@ -81,7 +81,7 @@ public/
 tripper.js
 db.js
 db.config.js
-database.sql
+tripper_schema_data.sql
 package.json
 ```
 
