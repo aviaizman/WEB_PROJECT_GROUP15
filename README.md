@@ -59,6 +59,7 @@ Go to:
 http://localhost:8080/
 ```
 
+You can only use a user from Users table. ( For Paz -  User: 'Paz', Email: 'Paz123456@gmail.com', Password: 'paz123456' )
 ## Main Features 🥾
 
 * View hiking routes from the database
