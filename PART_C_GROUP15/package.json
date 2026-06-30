@@ -1,0 +1,22 @@
+{
+  "name": "part_b_group15",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tripper.js",
+  "type": "module",
+  "scripts": {
+    "start": "node tripper.js",
+    "dev": "nodemon tripper.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

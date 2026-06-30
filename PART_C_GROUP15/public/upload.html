@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripper | Upload Route</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="upload">
+    <!-- Main navigation bar -->
+    <header class="site-header">
+        <a class="logo" href="/" aria-label="Tripper home">
+            <img src="images/TripperLogo.jpeg" alt="" class="logo-img">
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a class="active" href="/upload">Upload Route</a>
+            <a href="#" class="profile-link">My Profile</a>
+        </nav>
+        <div class="user-area" id="userArea"></div>
+    </header>
+
+    <main class="page-main">
+        <section class="form-section">
+            <!-- Decorative trail background -->
+            <div class="upload-background-art" aria-hidden="true">
+                <svg viewBox="0 0 1440 980" role="img" focusable="false" preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                        <marker id="trailArrow" markerWidth="16" markerHeight="16" refX="10" refY="5" orient="auto">
+                            <path d="M1 1 L10 5 L1 9" fill="none" stroke="#8B5E3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </marker>
+                    </defs>
+
+                    <path class="trail-path left-trail" d="M410 948 C270 824 296 696 430 612 C548 538 518 436 392 374 C286 322 312 176 474 70" />
+                    <path id="rightTrailPath" class="trail-path right-trail" d="M1086 54 C1232 166 1202 304 1068 386 C940 464 978 568 1122 636 C1256 700 1234 830 1088 936" />
+                    <path class="trail-arrow left-arrow-one" d="M342 786 C314 738 342 684 396 650" marker-end="url(#trailArrow)" />
+                    <path class="trail-arrow left-arrow-two" d="M502 522 C536 480 516 430 456 398" marker-end="url(#trailArrow)" />
+                    <path class="trail-arrow right-arrow-one" d="M1162 198 C1190 254 1164 314 1102 350" marker-end="url(#trailArrow)" />
+                    <path class="trail-arrow right-arrow-two" d="M1062 608 C1120 636 1156 682 1148 742" marker-end="url(#trailArrow)" />
+
+                    <g id="movingTrailIcon" class="trail-moving-icon" transform="translate(1086 54)">
+                        <path d="M0 -20 C9 -20 16 -13 16 -4 C16 9 0 24 0 24 C0 24 -16 9 -16 -4 C-16 -13 -9 -20 0 -20Z" />
+                        <circle cx="0" cy="-4" r="5" />
+                    </g>
+
+                    <g class="destination-pin" transform="translate(1128 126)">
+                        <path d="M34 8 C50 8 63 21 63 37 C63 60 34 92 34 92 C34 92 5 60 5 37 C5 21 18 8 34 8Z" fill="#2D5A27" />
+                        <circle cx="34" cy="36" r="11" fill="#F4F1EA" />
+                    </g>
+
+                    <g class="mountains left-mountains" transform="translate(196 784)">
+                        <path d="M0 154 L118 34 L218 154Z" fill="#0077B6" />
+                        <path d="M130 154 L252 4 L384 154Z" fill="#2D5A27" />
+                        <path d="M118 34 L145 70 L101 70Z" fill="#F4F1EA" />
+                        <path d="M252 4 L286 48 L224 48Z" fill="#F4F1EA" />
+                    </g>
+
+                    <g class="mountains right-mountains" transform="translate(848 790)">
+                        <path d="M10 142 L112 40 L214 142Z" fill="#2D5A27" />
+                        <path d="M142 142 L258 14 L390 142Z" fill="#0077B6" />
+                        <path d="M112 40 L138 72 L88 72Z" fill="#F4F1EA" />
+                        <path d="M258 14 L292 54 L228 54Z" fill="#F4F1EA" />
+                    </g>
+
+                    <g class="trees left-trees" transform="translate(338 706)">
+                        <path d="M30 8 L58 60 H2Z" fill="#2D5A27" />
+                        <path d="M30 42 L66 106 H-6Z" fill="#2D5A27" />
+                        <path d="M28 104 H36 V146 H28Z" fill="#8B5E3C" />
+                        <path d="M106 28 L132 78 H80Z" fill="#2D5A27" />
+                        <path d="M106 64 L140 120 H72Z" fill="#2D5A27" />
+                        <path d="M102 118 H111 V152 H102Z" fill="#8B5E3C" />
+                    </g>
+
+                    <g class="trees right-trees" transform="translate(974 704)">
+                        <path d="M28 6 L56 58 H0Z" fill="#2D5A27" />
+                        <path d="M28 44 L62 106 H-6Z" fill="#2D5A27" />
+                        <path d="M24 104 H33 V152 H24Z" fill="#8B5E3C" />
+                        <path d="M96 32 L122 82 H70Z" fill="#2D5A27" />
+                        <path d="M96 66 L130 126 H62Z" fill="#2D5A27" />
+                        <path d="M92 124 H101 V156 H92Z" fill="#8B5E3C" />
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Message for users who are not logged in -->
+            <div class="access-message hidden" id="uploadAccessMessage">
+                <h1>Upload a Route</h1>
+                <p>Please log in before uploading a new route.</p>
+                <a class="btn primary-btn" href="/login">Log in to continue</a>
+            </div>
+
+            <!-- Upload form -->
+            <div class="form-card" id="uploadFormWrapper">
+                <div class="form-title">
+                    <p class="eyebrow">Share a place</p>
+                    <h1>Upload a Route</h1>
+                    <p>Add a route so other travelers can discover it.</p>
+                </div>
+
+                <form id="uploadForm" action="/CreateNewRoute" method="post" novalidate>
+                    <label>
+                        <span>Route name</span>
+                        <input type="text" id="routeName" name="routeName" autocomplete="off">
+                        <small class="field-error" id="routeNameError"></small>
+                    </label>
+
+                    <label>
+                        <span>Region</span>
+                        <select id="routeRegion" name="routeRegion">
+                            <option value="">Choose region</option>
+                            <option value="north">North</option>
+                            <option value="center">Center</option>
+                            <option value="south">South</option>
+                            <option value="jerusalem">Jerusalem</option>
+                        </select>
+                        <small class="field-error" id="routeRegionError"></small>
+                    </label>
+
+                    <label>
+                        <span>Difficulty</span>
+                        <select id="routeDifficulty" name="routeDifficulty">
+                            <option value="">Choose difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                        <small class="field-error" id="routeDifficultyError"></small>
+                    </label>
+
+                    <label>
+                        <span>Duration in hours</span>
+                        <input type="number" id="routeDuration" name="routeDuration" min="0.5" step="0.5">
+                        <small class="field-error" id="routeDurationError"></small>
+                    </label>
+
+                    <label>
+                        <span>Description</span>
+                        <textarea id="routeDescription" name="routeDescription" rows="5"></textarea>
+                        <small class="field-error" id="routeDescriptionError"></small>
+                    </label>
+
+                    <fieldset class="checkbox-group">
+                        <legend>Route features</legend>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="routeFeatures" value="circular">
+                            <span>Circular route</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="routeFeatures" value="dogs">
+                            <span>Suitable for dogs</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="routeFeatures" value="babies">
+                            <span>Suitable for babies</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="routeFeatures" value="romantic">
+                            <span>Romantic</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="routeFeatures" value="water">
+                            <span>Possibility for entering water</span>
+                        </label>
+                        <small class="field-error" id="routeFeaturesError"></small>
+                    </fieldset>
+
+                    <label>
+                        <span>Optional image</span>
+                        <span class="file-control">
+                            <input type="file" id="routeImage" name="routeImage" accept="image/*">
+                            <span class="file-button">Choose image</span>
+                            <span class="file-name" id="routeImageName">No file selected</span>
+                        </span>
+                    </label>
+
+                    <button class="btn primary-btn" type="submit">Upload Route</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Page footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Tripper. Built for easy outdoor planning.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

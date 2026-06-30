@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripper | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+    <!-- Main navigation bar -->
+    <header class="site-header">
+        <a class="logo" href="/" aria-label="Tripper home">
+            <img src="images/TripperLogo.jpeg" alt="" class="logo-img">
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a class="active" href="/">Home</a>
+            <a href="/upload">Upload Route</a>
+            <a href="#" class="profile-link">My Profile</a>
+        </nav>
+        <div class="user-area" id="userArea"></div>
+    </header>
+
+    <main>
+        <!-- Home page hero and search form -->
+        <section class="hero" id="homeHero">
+            <div class="hero-bg hero-bg-current" aria-hidden="true"></div>
+            <div class="hero-bg hero-bg-next" aria-hidden="true"></div>
+            <div class="hero-content">
+                <p class="eyebrow">Plan easier. Walk further.</p>
+                <h1>Find Your Next Adventure</h1>
+                <form class="search-panel" id="searchForm" novalidate>
+                    <div class="form-grid">
+                        <label>
+                            <span>Region</span>
+                            <select id="searchRegion" name="region">
+                                <option value="">Any region</option>
+                                <option value="north">North</option>
+                                <option value="center">Center</option>
+                                <option value="south">South</option>
+                                <option value="jerusalem">Jerusalem</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Difficulty</span>
+                            <select id="searchDifficulty" name="difficulty">
+                                <option value="">Any difficulty</option>
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Duration</span>
+                            <select id="searchDuration" name="duration">
+                                <option value="">Any duration</option>
+                                <option value="short">Up to 2 hours</option>
+                                <option value="half-day">2-5 hours</option>
+                                <option value="full-day">Full day</option>
+                            </select>
+                        </label>
+                    </div>
+                    <p class="error-text" id="searchError" aria-live="polite"></p>
+                    <button class="btn primary-btn" type="submit">Search Routes</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Search results section -->
+        <section class="section results-section" aria-labelledby="resultsTitle">
+            <div class="section-header">
+                <h2 id="resultsTitle">Search Results</h2>
+                <p>Choose filters above to find routes that fit your trip.</p>
+            </div>
+            <div class="route-grid" id="resultsArea" aria-live="polite"></div>
+        </section>
+
+        <!-- Short about section -->
+        <section class="section about-section" aria-labelledby="aboutTitle">
+            <div class="about-content">
+                <div>
+                    <p class="eyebrow">About Tripper</p>
+                    <h2 id="aboutTitle">Simple route discovery for outdoor days</h2>
+                </div>
+                <p>
+                    Search routes quickly by region, difficulty, and duration. Registered users
+                    can also upload their own favorite routes and help other travelers find great
+                    places to explore.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Page footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Tripper. Built for easy outdoor planning.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

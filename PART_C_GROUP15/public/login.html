@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripper | Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+    <!-- Main navigation bar -->
+    <header class="site-header">
+        <a class="logo" href="/" aria-label="Tripper home">
+            <img src="images/TripperLogo.jpeg" alt="" class="logo-img">
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a href="/upload">Upload Route</a>
+            <a href="#" class="profile-link">My Profile</a>
+        </nav>
+        <div class="user-area" id="userArea"></div>
+    </header>
+
+    <main class="page-main">
+        <section class="form-section">
+            <!-- Login form card -->
+            <div class="form-card">
+                <div class="form-title">
+                    <p class="eyebrow">Welcome back</p>
+                    <h1>Login or Register</h1>
+                    <p>Use any valid details to simulate a client-side login.</p>
+                </div>
+
+                <form id="loginForm" action="/LoginUser" method="post" novalidate>
+                    <label>
+                        <span>Username</span>
+                        <input type="text" id="username" name="username" autocomplete="off" autocapitalize="off" spellcheck="false">
+                        <small class="field-error" id="usernameError"></small>
+                    </label>
+
+                    <label>
+                        <span>Email</span>
+                        <input type="email" id="email" name="email" autocomplete="email">
+                        <small class="field-error" id="emailError"></small>
+                    </label>
+
+                    <label>
+                        <span>Password</span>
+                        <span class="password-field">
+                            <input type="password" id="password" name="password" autocomplete="current-password">
+                            <span class="help-icon" tabindex="0" aria-label="Password rules">?</span>
+                            <span class="help-text">Use at least 8 characters. Letters and numbers only, no symbols.</span>
+                        </span>
+                        <small class="field-error" id="passwordError"></small>
+                    </label>
+
+                    <button class="btn primary-btn" type="submit">Login</button>
+                    <p class="success-text" id="loginSuccess" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Page footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Tripper. Built for easy outdoor planning.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
